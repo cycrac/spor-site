@@ -7,13 +7,12 @@
     <style>
         /* Neşeli Tema: Pembe tonlar, detaylı arka plan */
         @import url("https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600&display=swap");
-        
         body {
             margin: 0;
             padding: 0;
             font-family: "Fredoka", cursive;
             background: linear-gradient(135deg, #FFE4E1 0%, #FFCCCB 50%, #FFB6C1 100%); /* Gradient geri geldi */
-            background-image: 
+            background-image:
                 radial-gradient(circle at 20% 80%, rgba(255, 105, 180, 0.1) 0%, transparent 50%),
                 radial-gradient(circle at 80% 20%, rgba(78, 205, 196, 0.1) 0%, transparent 50%),
                 repeating-linear-gradient(45deg, transparent, transparent 10px, rgba(255, 255, 255, 0.05) 10px, rgba(255, 255, 255, 0.05) 20px); /* Hafif dalga/desen efekti, detaylı ama hafif */
@@ -22,7 +21,6 @@
             min-height: 100vh;
             position: relative;
         }
-
         /* Hafif floating animasyonlu süslemeler (spor topu gibi soyut daireler) */
         body::before {
             content: "";
@@ -36,7 +34,6 @@
             animation: float 6s ease-in-out infinite;
             z-index: -1;
         }
-
         body::after {
             content: "";
             position: fixed;
@@ -49,12 +46,10 @@
             animation: float 8s ease-in-out infinite reverse;
             z-index: -1;
         }
-
         @keyframes float {
             0%, 100% { transform: translateY(0px); }
             50% { transform: translateY(-20px); }
         }
-
         /* Ana Ekran - Detaylı */
         .ana-ekran {
             display: flex;
@@ -66,7 +61,6 @@
             padding: 40px; /* Daha fazla padding */
             position: relative;
         }
-
         .ana-baslik {
             font-size: 2.8em; /* Biraz büyüttüm */
             color: #FF69B4;
@@ -78,13 +72,11 @@
             border-radius: 30px;
             backdrop-filter: blur(10px); /* Cam efekti, neşeli */
         }
-
         @keyframes bounce {
             0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
             40% { transform: translateY(-10px); }
             60% { transform: translateY(-5px); }
         }
-
         .butonlar {
             display: flex;
             justify-content: space-around;
@@ -92,7 +84,6 @@
             max-width: 700px; /* Genişlettim */
             gap: 20px;
         }
-
         .buton {
             padding: 20px 40px; /* Daha büyük */
             font-size: 1.3em;
@@ -105,7 +96,6 @@
             position: relative;
             overflow: hidden;
         }
-
         .buton::before {
             content: "";
             position: absolute;
@@ -116,36 +106,29 @@
             background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
             transition: left 0.5s;
         }
-
         .buton:hover::before {
             left: 100%; /* Glow efekti, detaylı */
         }
-
         .buton:hover {
             transform: scale(1.05);
             box-shadow: 0 10px 25px rgba(0,0,0,0.2); /* Daha belirgin gölge */
         }
-
         .kirmizi-buton {
             background-color: #FF6B6B;
             color: white;
             border: 3px solid #FF5252; /* Kenar detay */
         }
-
         .kirmizi-buton:hover {
             background-color: #FF5252;
         }
-
         .yesil-buton {
             background-color: #4ECDC4;
             color: white;
             border: 3px solid #26A69A; /* Kenar detay */
         }
-
         .yesil-buton:hover {
             background-color: #26A69A;
         }
-
         /* Listeler Ekranı - Detaylı, ARKA İÇERİK BULANIK VE TAM EKRAN GİBİ */
         .listeler-ekran {
             display: none;
@@ -154,7 +137,6 @@
             padding: 40px;
             position: relative;
         }
-
         .listeler-grid {
             display: grid;
             grid-template-columns: 1fr 1fr 1fr;
@@ -162,7 +144,6 @@
             height: 80vh;
             margin-top: 20px;
         }
-
         .liste-kolon {
             position: relative;
             background: linear-gradient(145deg, rgba(255, 255, 255, 0.9), rgba(255, 182, 193, 0.7)); /* Gradient detay */
@@ -174,12 +155,10 @@
             border: 2px solid rgba(255, 105, 180, 0.3); /* Çerçeve detay */
             box-shadow: 0 8px 20px rgba(0,0,0,0.1); /* Gölge */
         }
-
         .liste-kolon:hover {
             transform: scale(1.02) translateY(-5px); /* Hafif kalkma */
             box-shadow: 0 15px 30px rgba(0,0,0,0.2);
         }
-
         .liste-baslik {
             position: absolute;
             top: 50%;
@@ -190,13 +169,12 @@
             color: #FF69B4;
             z-index: 2;
             text-align: center;
-            text-shadow: 
+            text-shadow:
                 -1px -1px 0 #000,  
                 1px -1px 0 #000,
                 -1px 1px 0 #000,
                 1px 1px 0 #000; /* İnce siyah stroke */
         }
-
         .liste-icerik {
             filter: blur(5px); /* ARKA LİSTE BULANIK */
             opacity: 0.7;
@@ -204,11 +182,9 @@
             height: 100%; /* Tam kaplasın */
             overflow: hidden;
         }
-
         .liste-kolon:hover .liste-icerik {
             filter: blur(2px); /* Hover"da hafif netleş */
         }
-
         /* Tam Ekran Liste - Detaylı, SCROLL EKLENDİ */
         .tam-ekran {
             display: none;
@@ -218,14 +194,13 @@
             width: 100%;
             height: 100%;
             background: linear-gradient(135deg, #FFE4E1 0%, #FFCCCB 100%); /* Gradient geri geldi */
-            background-image: 
+            background-image:
                 radial-gradient(circle at 20% 80%, rgba(255, 105, 180, 0.05) 0%, transparent 50%),
                 radial-gradient(circle at 80% 20%, rgba(78, 205, 196, 0.05) 0%, transparent 50%);
             z-index: 1000;
             animation: zoomIn 0.5s ease-out;
             overflow-y: auto; /* SCROLL - Aşağı kaydırabilirsin */
         }
-
         @keyframes zoomIn {
             from {
                 transform: scale(0.5);
@@ -236,7 +211,6 @@
                 opacity: 1;
             }
         }
-
         .geri-buton {
             position: absolute;
             top: 25px;
@@ -252,11 +226,9 @@
             box-shadow: 0 5px 15px rgba(255, 107, 107, 0.4); /* Glow detay */
             transition: transform 0.3s ease;
         }
-
         .geri-buton:hover {
             transform: scale(1.1);
         }
-
         .tam-ekran-icerik {
             padding: 100px 40px 40px; /* Daha fazla padding */
             max-width: 900px;
@@ -264,7 +236,6 @@
             text-align: left;
             min-height: 100%; /* Scroll için tam yükseklik */
         }
-
         .tam-ekran h2 {
             color: #FF69B4;
             font-size: 2.2em;
@@ -275,7 +246,6 @@
             border-radius: 20px;
             backdrop-filter: blur(10px);
         }
-
         .hareket {
             margin-bottom: 35px; /* Daha fazla boşluk */
             padding: 20px;
@@ -285,17 +255,14 @@
             box-shadow: 0 5px 15px rgba(0,0,0,0.1); /* Gölge detay */
             transition: transform 0.3s ease;
         }
-
         .hareket:hover {
             transform: translateY(-3px); /* Hafif kalkma */
         }
-
         .hareket h3 {
             margin: 0 0 12px 0;
             color: #333;
             font-size: 1.4em;
         }
-
         .foto-placeholder {
             height: 220px; /* Biraz büyüttüm */
             background: linear-gradient(145deg, #F0F0F0, #E0E0E0);
@@ -309,11 +276,9 @@
             font-style: italic;
             transition: border-color 0.3s ease;
         }
-
         .foto-placeholder:hover {
             border-color: #FF69B4; /* Hover detay */
         }
-
         /* Mobil Uyum */
         @media (max-width: 768px) {
             .butonlar { flex-direction: column; gap: 25px; }
@@ -324,7 +289,6 @@
     </style>
 </head>
 <body>
-
     <!-- Ana Ekran -->
     <div id="anaEkran" class="ana-ekran">
         <h1 class="ana-baslik">Naber güzellik 😏? bugün spor yapmak ister misin ?</h1>
@@ -333,108 +297,98 @@
             <button class="buton yesil-buton" onclick="gitListelere()">evet! seve seve!</button>
         </div>
     </div>
-
     <!-- Listeler Ekranı -->
     <div id="listelerEkran" class="listeler-ekran">
         <div class="listeler-grid">
-            <!-- Sol: Göğüs+Triceps -->
+            <!-- Sol: Göğüs ve Triceps -->
             <div class="liste-kolon" onclick="acTamEkran('gogus-triceps')">
                 <div class="liste-baslik">Göğüs+Triceps</div>
                 <div class="liste-icerik">
-                    <div class="hareket"><h3>Bench Press 4x12</h3><div class="foto-placeholder">Fotoğraf buraya ekle</div></div>
-                    <div class="hareket"><h3>Dumbell Fly 3x12</h3><div class="foto-placeholder">Fotoğraf buraya ekle</div></div>
-                    <div class="hareket"><h3>Push-up 3x12</h3><div class="foto-placeholder">Fotoğraf buraya ekle</div></div>
-                    <div class="hareket"><h3>Pike Push up 2x8</h3><div class="foto-placeholder">Fotoğraf buraya ekle</div></div>
-                    <div class="hareket"><h3>Dips 2x8</h3><div class="foto-placeholder">Fotoğraf buraya ekle</div></div>
-                    <div class="hareket"><h3>Plank 3x 1dk</h3><div class="foto-placeholder">Fotoğraf buraya ekle</div></div>
+                    <div class="hareket"><h3>Bench Press 2x12</h3><img src="bench.png" alt="Bench Press" style="width:100%; height:220px; border-radius:15px; object-fit:cover;"></div>
+                    <div class="hareket"><h3>Dumbell Fly 2x10</h3><img src="fly.png" alt="Dumbell Fly" style="width:100%; height:220px; border-radius:15px; object-fit:cover;"></div>
+                    <div class="hareket"><h3>Push-up 2x12</h3><img src="pushup.png" alt="Push-up" style="width:100%; height:220px; border-radius:15px; object-fit:cover;"></div>
+                    <div class="hareket"><h3>Pike Push up 2x8</h3><img src="pikepushup.png" alt="Pike Push up" style="width:100%; height:220px; border-radius:15px; object-fit:cover;"></div>
+                    <div class="hareket"><h3>Dips 2x10</h3><img src="dips.png" alt="Dips" style="width:100%; height:220px; border-radius:15px; object-fit:cover;"></div>
+                    <div class="hareket"><h3>Triceps Extension 3x8</h3><img src="triceps.png" alt="Triceps Extension" style="width:100%; height:220px; border-radius:15px; object-fit:cover;"></div>
                 </div>
             </div>
-
             <!-- Orta: Bacak -->
             <div class="liste-kolon" onclick="acTamEkran('bacak')">
                 <div class="liste-baslik">Bacak</div>
                 <div class="liste-icerik">
-                    <div class="hareket"><h3>Goblet Squat 3x12</h3><div class="foto-placeholder">Fotoğraf buraya ekle</div></div>
-                    <div class="hareket"><h3>Leg Raise 3x12</h3><div class="foto-placeholder">Fotoğraf buraya ekle</div></div>
-                    <div class="hareket"><h3>Reverse Lunge 3x8</h3><div class="foto-placeholder">Fotoğraf buraya ekle</div></div>
-                    <div class="hareket"><h3>Calf raise 3x10</h3><div class="foto-placeholder">Fotoğraf buraya ekle</div></div>
-                    <div class="hareket"><h3>Glute Bridge 3x16</h3><div class="foto-placeholder">Fotoğraf buraya ekle</div></div>
-                    <div class="hareket"><h3>Side Plank 3x 20 saniye</h3><div class="foto-placeholder">Fotoğraf buraya ekle</div></div>
+                    <div class="hareket"><h3>Goblet Squat 3x12</h3><img src="goblet.png" alt="Goblet Squat" style="width:100%; height:220px; border-radius:15px; object-fit:cover;"></div>
+                    <div class="hareket"><h3>Glute Pulse 2x12 (her seferinde 3-4 saniye havada tut)</h3><img src="glutepulse.png" alt="Glute Pulse" style="width:100%; height:220px; border-radius:15px; object-fit:cover;"></div>
+                    <div class="hareket"><h3>Reverse Lunge 3x8</h3><img src="lunges.png" alt="Reverse Lunge" style="width:100%; height:220px; border-radius:15px; object-fit:cover;"></div>
+                    <div class="hareket"><h3>Calf raise 3x10</h3><img src="calf.png" alt="Calf raise" style="width:100%; height:220px; border-radius:15px; object-fit:cover;"></div>
+                    <div class="hareket"><h3>Glute Bridge 3x16 (her seferinde 3-4 saniye havada tut)</h3><img src="bridge.png" alt="Glute Bridge" style="width:100%; height:220px; border-radius:15px; object-fit:cover;"></div>
+                    <div class="hareket"><h3>Plank 3x 1dk</h3><img src="plank.png" alt="Plank" style="width:100%; height:220px; border-radius:15px; object-fit:cover;"></div>
                 </div>
             </div>
-
             <!-- Sağ: Biceps ++ -->
             <div class="liste-kolon" onclick="acTamEkran('biceps')">
                 <div class="liste-baslik">Biceps ++</div>
                 <div class="liste-icerik">
-                    <div class="hareket"><h3>Dumbell Swing 2x15</h3><div class="foto-placeholder">Fotoğraf buraya ekle</div></div>
-                    <div class="hareket"><h3>Front Raises 2x8</h3><div class="foto-placeholder">Fotoğraf buraya ekle</div></div>
-                    <div class="hareket"><h3>Bent over Dumbell Row 3x10</h3><div class="foto-placeholder">Fotoğraf buraya ekle</div></div>
-                    <div class="hareket"><h3>Biceps Halter 2x12</h3><div class="foto-placeholder">Fotoğraf buraya ekle</div></div>
-                    <div class="hareket"><h3>Bicep Hammer Curl 2x12</h3><div class="foto-placeholder">Fotoğraf buraya ekle</div></div>
-                    <div class="hareket"><h3>Reverse Biceps Halter 2x12</h3><div class="foto-placeholder">Fotoğraf buraya ekle</div></div>
+                    <div class="hareket"><h3>Dumbell Swing 2x15</h3><img src="swing.png" alt="Dumbell Swing" style="width:100%; height:220px; border-radius:15px; object-fit:cover;"></div>
+                    <div class="hareket"><h3>Superman 3x15 saniye</h3><img src="superman.png" alt="Superman" style="width:100%; height:220px; border-radius:15px; object-fit:cover;"></div>
+                    <div class="hareket"><h3>Bent over Dumbbell Row 3x10</h3><img src="dumbellrow.png" alt="Bent over Dumbbell Row" style="width:100%; height:220px; border-radius:15px; object-fit:cover;"></div>
+                    <div class="hareket"><h3>Biceps Halter 2x12</h3><img src="curl.png" alt="Biceps Halter" style="width:100%; height:220px; border-radius:15px; object-fit:cover;"></div>
+                    <div class="hareket"><h3>Bicep Hammer Curl 2x12</h3><img src="hammercurl.png" alt="Bicep Hammer Curl" style="width:100%; height:220px; border-radius:15px; object-fit:cover;"></div>
+                    <div class="hareket"><h3>Reverse Biceps Halter 2x12</h3><img src="reversecurl.png" alt="Reverse Biceps Halter" style="width:100%; height:220px; border-radius:15px; object-fit:cover;"></div>
                 </div>
             </div>
         </div>
     </div>
-
     <!-- Tam Ekran Modları -->
     <div id="tamEkran" class="tam-ekran">
         <button class="geri-buton" onclick="geriDon()">&lt;</button>
         <div id="tamIcerik" class="tam-ekran-icerik"></div>
     </div>
-
     <script>
         function gitListelere() {
             document.getElementById("anaEkran").style.display = "none";
             document.getElementById("listelerEkran").style.display = "flex";
         }
-
         function acTamEkran(tip) {
             const tamEkran = document.getElementById("tamEkran");
             const icerik = document.getElementById("tamIcerik");
             let html = "";
-
             if (tip === "gogus-triceps") {
                 html = `
-                    <h2>Göğüs + Triceps Günü</h2>
-                    <div class="hareket"><h3>Bench Press 4x12</h3><div class="foto-placeholder">Fotoğraf buraya ekle</div></div>
-                    <div class="hareket"><h3>Dumbell Fly 3x12</h3><div class="foto-placeholder">Fotoğraf buraya ekle</div></div>
-                    <div class="hareket"><h3>Push-up 3x12</h3><div class="foto-placeholder">Fotoğraf buraya ekle</div></div>
-                    <div class="hareket"><h3>Pike Push up 2x8</h3><div class="foto-placeholder">Fotoğraf buraya ekle</div></div>
-                    <div class="hareket"><h3>Dips 2x8</h3><div class="foto-placeholder">Fotoğraf buraya ekle</div></div>
-                    <div class="hareket"><h3>Plank 3x 1dk</h3><div class="foto-placeholder">Fotoğraf buraya ekle</div></div>
+                    <h2>Göğüs ve Triceps Günü</h2>
+                    <div class="hareket"><h3>Bench Press 2x12</h3><img src="bench.png" alt="Bench Press" style="width:100%; height:220px; border-radius:15px; object-fit:cover;"></div>
+                    <div class="hareket"><h3>Dumbell Fly 2x10</h3><img src="fly.png" alt="Dumbell Fly" style="width:100%; height:220px; border-radius:15px; object-fit:cover;"></div>
+                    <div class="hareket"><h3>Push-up 2x12</h3><img src="pushup.png" alt="Push-up" style="width:100%; height:220px; border-radius:15px; object-fit:cover;"></div>
+                    <div class="hareket"><h3>Pike Push up 2x8</h3><img src="pikepushup.png" alt="Pike Push up" style="width:100%; height:220px; border-radius:15px; object-fit:cover;"></div>
+                    <div class="hareket"><h3>Dips 2x10</h3><img src="dips.png" alt="Dips" style="width:100%; height:220px; border-radius:15px; object-fit:cover;"></div>
+                    <div class="hareket"><h3>Triceps Extension 3x8</h3><img src="triceps.png" alt="Triceps Extension" style="width:100%; height:220px; border-radius:15px; object-fit:cover;"></div>
                 `;
             } else if (tip === "bacak") {
                 html = `
                     <h2>Bacak Günü</h2>
-                    <div class="hareket"><h3>Goblet Squat 3x12</h3><div class="foto-placeholder">Fotoğraf buraya ekle</div></div>
-                    <div class="hareket"><h3>Leg Raise 3x12</h3><div class="foto-placeholder">Fotoğraf buraya ekle</div></div>
-                    <div class="hareket"><h3>Reverse Lunge 3x8</h3><div class="foto-placeholder">Fotoğraf buraya ekle</div></div>
-                    <div class="hareket"><h3>Calf raise 3x10</h3><div class="foto-placeholder">Fotoğraf buraya ekle</div></div>
-                    <div class="hareket"><h3>Glute Bridge 3x16</h3><div class="foto-placeholder">Fotoğraf buraya ekle</div></div>
-                    <div class="hareket"><h3>Side Plank 3x 20 saniye</h3><div class="foto-placeholder">Fotoğraf buraya ekle</div></div>
+                    <div class="hareket"><h3>Goblet Squat 3x12</h3><img src="goblet.png" alt="Goblet Squat" style="width:100%; height:220px; border-radius:15px; object-fit:cover;"></div>
+                    <div class="hareket"><h3>Glute Pulse 2x12 (her seferinde 3-4 saniye havada tut)</h3><img src="glutepulse.png" alt="Glute Pulse" style="width:100%; height:220px; border-radius:15px; object-fit:cover;"></div>
+                    <div class="hareket"><h3>Reverse Lunge 3x8</h3><img src="lunges.png" alt="Reverse Lunge" style="width:100%; height:220px; border-radius:15px; object-fit:cover;"></div>
+                    <div class="hareket"><h3>Calf raise 3x10</h3><img src="calf.png" alt="Calf raise" style="width:100%; height:220px; border-radius:15px; object-fit:cover;"></div>
+                    <div class="hareket"><h3>Glute Bridge 3x16 (her seferinde 3-4 saniye havada tut)</h3><img src="bridge.png" alt="Glute Bridge" style="width:100%; height:220px; border-radius:15px; object-fit:cover;"></div>
+                    <div class="hareket"><h3>Plank 3x 1dk</h3><img src="plank.png" alt="Plank" style="width:100%; height:220px; border-radius:15px; object-fit:cover;"></div>
                 `;
             } else if (tip === "biceps") {
                 html = `
                     <h2>Biceps ++ Günü</h2>
-                    <div class="hareket"><h3>Dumbell Swing 2x15</h3><div class="foto-placeholder">Fotoğraf buraya ekle</div></div>
-                    <div class="hareket"><h3>Front Raises 2x8</h3><div class="foto-placeholder">Fotoğraf buraya ekle</div></div>
-                    <div class="hareket"><h3>Bent over Dumbell Row 3x10</h3><div class="foto-placeholder">Fotoğraf buraya ekle</div></div>
-                    <div class="hareket"><h3>Biceps Halter 2x12</h3><div class="foto-placeholder">Fotoğraf buraya ekle</div></div>
-                    <div class="hareket"><h3>Bicep Hammer Curl 2x12</h3><div class="foto-placeholder">Fotoğraf buraya ekle</div></div>
-                    <div class="hareket"><h3>Reverse Biceps Halter 2x12</h3><div class="foto-placeholder">Fotoğraf buraya ekle</div></div>
+                    <div class="hareket"><h3>Dumbell Swing 2x15</h3><img src="swing.png" alt="Dumbell Swing" style="width:100%; height:220px; border-radius:15px; object-fit:cover;"></div>
+                    <div class="hareket"><h3>Superman 3x15 saniye</h3><img src="superman.png" alt="Superman" style="width:100%; height:220px; border-radius:15px; object-fit:cover;"></div>
+                    <div class="hareket"><h3>Bent over Dumbbell Row 3x10</h3><img src="dumbellrow.png" alt="Bent over Dumbbell Row" style="width:100%; height:220px; border-radius:15px; object-fit:cover;"></div>
+                    <div class="hareket"><h3>Biceps Halter 2x12</h3><img src="curl.png" alt="Biceps Halter" style="width:100%; height:220px; border-radius:15px; object-fit:cover;"></div>
+                    <div class="hareket"><h3>Bicep Hammer Curl 2x12</h3><img src="hammercurl.png" alt="Bicep Hammer Curl" style="width:100%; height:220px; border-radius:15px; object-fit:cover;"></div>
+                    <div class="hareket"><h3>Reverse Biceps Halter 2x12</h3><img src="reversecurl.png" alt="Reverse Biceps Halter" style="width:100%; height:220px; border-radius:15px; object-fit:cover;"></div>
                 `;
             }
-
             icerik.innerHTML = html;
             tamEkran.style.display = "block";
         }
-
         function geriDon() {
             document.getElementById("tamEkran").style.display = "none";
         }
     </script>
-
 </body>
 </html>
